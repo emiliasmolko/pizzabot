@@ -1,0 +1,896 @@
+{
+  "intents": [
+    {
+      "intent": "help",
+      "examples": [
+        {
+          "text": "help"
+        },
+        {
+          "text": "I don't understand"
+        },
+        {
+          "text": "help please"
+        },
+        {
+          "text": "What can I do"
+        }
+      ]
+    },
+    {
+      "intent": "reset",
+      "examples": [
+        {
+          "text": "begin"
+        },
+        {
+          "text": "delete the inputs"
+        },
+        {
+          "text": "reset"
+        },
+        {
+          "text": "start again"
+        }
+      ]
+    },
+    {
+      "intent": "pizzainfo",
+      "examples": [
+        {
+          "text": "What kind of pizzas you are doing?"
+        },
+        {
+          "text": "Are you doing pepperoni pizza?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "order",
+      "examples": [
+        {
+          "text": "I want to order a large pizza",
+          "mentions": [
+            {
+              "entity": "pizza_size",
+              "location": [
+                18,
+                23
+              ]
+            }
+          ]
+        },
+        {
+          "text": "I would like chicken, basil and olives",
+          "mentions": [
+            {
+              "entity": "pizza_toppings",
+              "location": [
+                32,
+                38
+              ]
+            },
+            {
+              "entity": "pizza_toppings",
+              "location": [
+                22,
+                27
+              ]
+            },
+            {
+              "entity": "pizza_toppings",
+              "location": [
+                13,
+                20
+              ]
+            }
+          ]
+        },
+        {
+          "text": "I want to order a pizza"
+        },
+        {
+          "text": "order"
+        },
+        {
+          "text": "I'm gonna have a margarita to go."
+        },
+        {
+          "text": "Large pizza for two persons"
+        },
+        {
+          "text": "I am hungry"
+        },
+        {
+          "text": "I'd like a pizza"
+        },
+        {
+          "text": "Can I get a pizza margherita, small please",
+          "mentions": [
+            {
+              "entity": "pizza_size",
+              "location": [
+                30,
+                35
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Pizza without chicken",
+          "mentions": [
+            {
+              "entity": "pizza_notoppings",
+              "location": [
+                14,
+                21
+              ]
+            }
+          ]
+        },
+        {
+          "text": "I will ask a pizza without olives",
+          "mentions": [
+            {
+              "entity": "pizza_notoppings",
+              "location": [
+                27,
+                33
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "intent": "exit",
+      "examples": [
+        {
+          "text": "get me out"
+        },
+        {
+          "text": "exit"
+        },
+        {
+          "text": "no"
+        },
+        {
+          "text": "I'm done"
+        },
+        {
+          "text": "get me out of here"
+        },
+        {
+          "text": "cancel"
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "entity": "pizza_size",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "średnia",
+          "synonyms": [
+            "regular",
+            "medium",
+            "average",
+            "regularly",
+            "normal",
+            "ordinary",
+            "moderate",
+            "standard"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "duża",
+          "synonyms": [
+            "large",
+            "big",
+            "huge",
+            "larger",
+            "vast"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "mała",
+          "synonyms": [
+            "small",
+            "tiny",
+            "smaller",
+            "little",
+            "short",
+            "smallish"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-time",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "pizza_toppings",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "cebula",
+          "synonyms": [
+            "onion"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "grzyby",
+          "synonyms": [
+            "mushroom"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "salami",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "szynka",
+          "synonyms": [
+            "ham"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "kurczak",
+          "synonyms": [
+            "chicken"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "kiełbasa",
+          "synonyms": [
+            "sausage"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "bazylia",
+          "synonyms": [
+            "basil"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "sardele",
+          "synonyms": [
+            "anchovy",
+            "anchovies"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "oliwki",
+          "synonyms": [
+            "olive",
+            "olives"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "pepperoni",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "pizza_type",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "cztery sery",
+          "synonyms": [
+            "four cheese",
+            "quatro fromaggi"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "margerita",
+          "synonyms": [
+            "margerita",
+            "margherita"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "wegetariańska",
+          "synonyms": [
+            "vegetariana",
+            "vegetarian"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "serowa",
+          "synonyms": [
+            "cheese"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-date",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "pizza_place",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "stay",
+          "synonyms": [
+            "restaurant",
+            "eat in",
+            "eat there",
+            "dine in"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "go",
+          "synonyms": [
+            "home",
+            "take",
+            "take out"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "pizza_notoppings",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "oliwek",
+          "synonyms": [
+            "olives",
+            "olive"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "olives",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "kurczaka",
+          "synonyms": [
+            "chicken"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "extra_confirmed",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "tak",
+          "synonyms": [
+            "yes"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "nie",
+          "synonyms": [
+            "no"
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "webhooks": [
+    {
+      "url": "",
+      "name": "main_webhook",
+      "headers": []
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Dziękuję za rozmowę."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "Pizza ordering",
+      "conditions": "#exit",
+      "event_name": "generic",
+      "dialog_node": "handler_3_1569943976782",
+      "previous_sibling": "handler_10_1500495433159"
+    },
+    {
+      "type": "slot",
+      "title": "slot_3_1494421237824",
+      "output": {},
+      "parent": "Pizza ordering",
+      "variable": "$pizza_size",
+      "dialog_node": "slot_3_1494421237824",
+      "previous_sibling": "node_8_1494705793073"
+    },
+    {
+      "type": "slot",
+      "title": "slot_1_1569946316246",
+      "output": {},
+      "parent": "Pizza ordering",
+      "variable": "$pizza_notoppings",
+      "dialog_node": "slot_1_1569946316246",
+      "previous_sibling": "slot_6_1494421302730"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Dziękujemy za zamówienie  <?$pizza_place == 'stay'? ' w restauracji.' :  ' na wynos'?>. Pizza $pizza_size $pizza_type do niej dodatki <? $pizza_toppings.join(', ') ?>. "
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "Pizza ordering",
+      "conditions": "$pizza_toppings && $pizza_toppings.size()>0 && $pizza_place",
+      "dialog_node": "node_7_1494705728892",
+      "previous_sibling": "handler_3_1569943976782"
+    },
+    {
+      "type": "slot",
+      "title": "slot_1_1494704123064",
+      "output": {},
+      "parent": "Pizza ordering",
+      "metadata": {},
+      "variable": "$pizza_toppings",
+      "dialog_node": "slot_1_1494704123064",
+      "previous_sibling": "slot_1_1569946316246"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Dziękujemy za zamówienie.  Pizza $pizza_size $pizza_type z dodatkami: <? $pizza_toppings.join(', ') ?> ."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "Pizza ordering",
+      "conditions": " $pizza_toppings && $pizza_toppings.size()>0",
+      "dialog_node": "node_19_1501070902849",
+      "previous_sibling": "node_7_1494705728892"
+    },
+    {
+      "type": "slot",
+      "title": "slot_6_1494421302730",
+      "output": {},
+      "parent": "Pizza ordering",
+      "variable": "$pizza_type",
+      "dialog_node": "slot_6_1494421302730",
+      "previous_sibling": "slot_3_1494421237824"
+    },
+    {
+      "type": "slot",
+      "parent": "Pizza ordering",
+      "variable": "$pizza_place",
+      "dialog_node": "slot_16_1501069677090",
+      "previous_sibling": "slot_1_1494704123064"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Dziękuję za zamówienie pizzy $pizza_size $pizza_type pizza."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "Pizza ordering",
+      "dialog_node": "node_8_1494705793073",
+      "previous_sibling": "node_19_1501070902849"
+    },
+    {
+      "type": "event_handler",
+      "title": "handler_10_1500495433159",
+      "output": {
+        "text": {
+          "values": [
+            "Możesz wybrać rozmiar (mała, średnia, duża), typ (serowa, margerita, cztery sery lub wegetariańska) i dodatki."
+          ]
+        }
+      },
+      "parent": "Pizza ordering",
+      "metadata": {},
+      "conditions": "#help",
+      "event_name": "generic",
+      "dialog_node": "handler_10_1500495433159"
+    },
+    {
+      "type": "event_handler",
+      "title": "handler_5_1500492489376",
+      "output": {
+        "text": {
+          "values": []
+        }
+      },
+      "parent": "slot_6_1494421302730",
+      "conditions": "",
+      "event_name": "filled",
+      "dialog_node": "handler_5_1500492489376",
+      "previous_sibling": "handler_8_1494421347721"
+    },
+    {
+      "type": "event_handler",
+      "title": "handler_8_1494421347721",
+      "output": {},
+      "parent": "slot_6_1494421302730",
+      "context": {
+        "pizza_type": "@pizza_type"
+      },
+      "conditions": "@pizza_type",
+      "event_name": "input",
+      "dialog_node": "handler_8_1494421347721",
+      "previous_sibling": "handler_7_1494421336855"
+    },
+    {
+      "type": "event_handler",
+      "title": "handler_7_1494421336855",
+      "output": {
+        "text": {
+          "values": [
+            "Jaki typ pizzy chcesz? Możesz skomponowac własną zaczynając od pizzy serowej lub wybrać  cztery sery, wegetariańską lub margeritę."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_6_1494421302730",
+      "event_name": "focus",
+      "dialog_node": "handler_7_1494421336855"
+    },
+    {
+      "type": "event_handler",
+      "title": "handler_5_1569946316251",
+      "output": {},
+      "parent": "slot_1_1569946316246",
+      "event_name": "focus",
+      "dialog_node": "handler_5_1569946316251",
+      "previous_sibling": "handler_8_1569946316251"
+    },
+    {
+      "type": "event_handler",
+      "title": "handler_8_1569946316251",
+      "output": {},
+      "parent": "slot_1_1569946316246",
+      "context": {
+        "pizza_notoppings": "@pizza_notoppings.values"
+      },
+      "conditions": "@pizza_notoppings.values",
+      "event_name": "input",
+      "dialog_node": "handler_8_1569946316251"
+    },
+    {
+      "type": "event_handler",
+      "title": "handler_5_1494421285663",
+      "output": {},
+      "parent": "slot_3_1494421237824",
+      "context": {
+        "pizza_size": "@pizza_size"
+      },
+      "conditions": "@pizza_size",
+      "event_name": "input",
+      "dialog_node": "handler_5_1494421285663",
+      "previous_sibling": "handler_4_1494421274527"
+    },
+    {
+      "type": "event_handler",
+      "title": "handler_4_1494421274527",
+      "output": {
+        "text": {
+          "values": [
+            "Jakiej wielkości pizzę przygotować? Może być duża, średnia lub mała."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_3_1494421237824",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1494421274527"
+    },
+    {
+      "type": "event_handler",
+      "title": "handler_2_1494704151628",
+      "output": {},
+      "parent": "slot_1_1494704123064",
+      "context": {
+        "pizza_toppings": "@pizza_toppings.values"
+      },
+      "metadata": {},
+      "conditions": "@pizza_toppings.values",
+      "event_name": "input",
+      "dialog_node": "handler_2_1494704151628",
+      "previous_sibling": "handler_3_1494704424215"
+    },
+    {
+      "type": "event_handler",
+      "title": "handler_5_1494704673688",
+      "output": {
+        "text": {
+          "values": [
+            "O.K., dodajemy jeden dodatek - @toppings"
+          ]
+        }
+      },
+      "parent": "slot_1_1494704123064",
+      "metadata": {},
+      "conditions": "@pizza_toppings.length == 1",
+      "event_name": "filled",
+      "dialog_node": "handler_5_1494704673688",
+      "previous_sibling": "handler_2_1494704151628"
+    },
+    {
+      "type": "event_handler",
+      "title": "handler_4_1500489535722",
+      "output": {
+        "text": {
+          "values": []
+        }
+      },
+      "parent": "slot_1_1494704123064",
+      "metadata": {},
+      "event_name": "filled",
+      "dialog_node": "handler_4_1500489535722",
+      "previous_sibling": "handler_6_1494704751936"
+    },
+    {
+      "type": "event_handler",
+      "title": "handler_6_1494704751936",
+      "output": {
+        "text": {
+          "values": [
+            "O.K., dodajemy @pizza_toppings.length dodatków do twojej pizzy.."
+          ]
+        }
+      },
+      "parent": "slot_1_1494704123064",
+      "metadata": {},
+      "conditions": "@pizza_toppings.length > 1",
+      "event_name": "filled",
+      "dialog_node": "handler_6_1494704751936",
+      "previous_sibling": "handler_5_1494704673688"
+    },
+    {
+      "type": "event_handler",
+      "title": "handler_8_1500493007853",
+      "output": {
+        "text": {
+          "values": [
+            "OK, jakie dodatki wybierasz? Mamy pepperoni,kiełbaski, szynkę, grzyby, salami i wiele innych."
+          ]
+        }
+      },
+      "parent": "slot_1_1494704123064",
+      "metadata": {},
+      "conditions": "@extra_confirmed:tak",
+      "event_name": "nomatch",
+      "dialog_node": "handler_8_1500493007853",
+      "previous_sibling": "handler_4_1494704594631"
+    },
+    {
+      "type": "event_handler",
+      "title": "handler_4_1494704594631",
+      "output": {
+        "text": {
+          "values": [
+            "O.K. Bez dodatków."
+          ]
+        }
+      },
+      "parent": "slot_1_1494704123064",
+      "context": {
+        "pizza_toppings": ""
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "skip_all_slots"
+      },
+      "conditions": "@extra_confirmed:nie",
+      "event_name": "nomatch",
+      "dialog_node": "handler_4_1494704594631",
+      "previous_sibling": "handler_4_1500489535722"
+    },
+    {
+      "type": "event_handler",
+      "title": "handler_3_1494704424215",
+      "output": {
+        "text": {
+          "values": [
+            "Czy dodać jakieś składniki na pizzę?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_1_1494704123064",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_3_1494704424215"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_16_1501069677090",
+      "event_name": "focus",
+      "dialog_node": "handler_18_1501069677090",
+      "previous_sibling": "handler_17_1501069677090"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_16_1501069677090",
+      "context": {
+        "pizza_place": "@pizza_place"
+      },
+      "conditions": "@pizza_place",
+      "event_name": "input",
+      "dialog_node": "handler_17_1501069677090"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Przygotowujemy pizzę serową z możliwością wyboru dodatków - pepperoni, oliwki, papryka, szynka, pieczarki, bazylia, ananas, kiełbasa. Mamy też stałe konfiguracje: margerita, pepperoni, cztery sery oraz wegetariańska."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#pizzainfo",
+      "user_label": "informacja o menu",
+      "dialog_node": "node_10_1569945409275",
+      "previous_sibling": "Pizza ordering"
+    },
+    {
+      "type": "standard",
+      "title": "reset",
+      "output": {
+        "text": {
+          "values": [
+            "Zacznijmy od nowa."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "context": {
+        "pizza_size": null,
+        "pizza_type": null,
+        "pizza_place": null,
+        "pizza_toppings": null
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "Welcome"
+      },
+      "conditions": "#reset",
+      "dialog_node": "Reset",
+      "previous_sibling": "node_10_1569945409275"
+    },
+    {
+      "type": "standard",
+      "title": "Fallback",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Możesz zamówić dużą, średnią lub małą pizzę. Podstawowa to serowa. MOżesz do niej dodawać składniki lub wybrać margerithę, cztery sery lub wegeratiańską."
+              },
+              {
+                "text": "Jeśli zaczniesz od pizzy serowej możesz dodawać składniki. Mamy pepperoni, kiełbasę, szynke, oliwki, cebulę, anchovies, grzyby i salami"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {},
+      "metadata": {},
+      "conditions": "anything_else",
+      "digress_in": "not_available",
+      "dialog_node": "Fallback",
+      "digress_out": "allow_all",
+      "previous_sibling": "Reset"
+    },
+    {
+      "type": "frame",
+      "title": "zamówienie",
+      "output": {},
+      "metadata": {
+        "fallback": "leave"
+      },
+      "conditions": "#order",
+      "digress_in": "returns",
+      "user_label": "zamówienie pizzy",
+      "dialog_node": "Pizza ordering",
+      "digress_out": "allow_all",
+      "previous_sibling": "Welcome",
+      "digress_out_slots": "allow_all"
+    },
+    {
+      "type": "standard",
+      "title": "przywitanie",
+      "output": {
+        "text": {
+          "values": [
+            "Miło nam przywitać Cie w demonstracyjnej wersji bota zamawiającego pizzę :-). Przepraszamy za niedoskonałości."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    },
+    "disambiguation": {
+      "prompt": "Pomóż mi zrozumieć o co pytasz:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 4,
+      "none_of_the_above_prompt": "inna opcja"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "spelling_auto_correct": false
+  },
+  "learning_opt_out": false,
+  "name": "WatsonPizzeria",
+  "language": "en",
+  "description": "Basic pizza ordering with optional topping, basic version with one attempt to provide toppings"
+}
